@@ -4,12 +4,186 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cours JS</title>
+    <title>Cours Java Script</title>
 </head>
+
 <body>
-<script>
-    console.log("Hello World")
-</script>
+    <h1>Les bases de JavaScript</h1>
+
+    <h2>1. Ou ecrire du JavaScript</h2>
+    <p>On peut écrire le JavaScript dans ...</p>
+        <li>L'élément head d'un fichier HTML </li>
+        <li>L'élément body d'un fichier HTML </li>
+        <li>Dans un fichier .js séparé</li>
+
+
+    <h2>2. Syntaxe, Indentation et Commentaires</h2>  
+    <p> Les commentaires</p>
+    <li>  // Je suis un commentaire Monàligne</li>
+    <li> /* Je suis un commentaire multi-ligne </li>
+    
+
+
+
+    <h2>3. Les variables en JavaScript</h2>
+    <p>Definition d'un variable </p>
+
+    <p>Déclartion d'une variable </p>
+    <script>
+        var x = 25;
+        var X = 100;
+
+        var prenom = "Thomas", nom = "AWOUNFOUET", dpt = 83;
+
+        // Déclarer une variable vide 
+        var age;
+        age = 25;
+
+        var ville = "";
+        ville = "Paris"
+
+
+        // Les Booleens
+        var homme = true;
+    </script>
+
+    <p>Introduction aux types de valeurs </p>
+    <p>L'opérateur d'affectaion  </p>
+    <script>
+        x = x + 5
+    </script>
+
+
+
+
+    <h2>4. Les types de valeurs des variables </h2>
+    <p>Découverte des principaux types de valeurs pouvant être stockés dans les variables</p>
+    <script>
+    // Variables de valeur de type number
+        var x = 25;
+        var y = -75;
+        var z = 3.14;
+    
+    // Variables de valeur de type string (chaine de charactère)
+        var prenom = "Thomas";
+        var nom = "AWOUNFOUET";
+        var sexe = "Je suis un homme";
+        
+        var dpt = "Je vie dans le \"83\"";
+        var dpt2 ='Je vie dans le "83"';
+        var ville = 'J\'habite à Toulon';
+        var ville2 = "J'habite à Toulon "
+
+        var xprime = "25"; // la valeur stocké est un string et pas un nimbvre
+        
+    // Variables de valeur de type booléan 
+        var a = true, b = false;
+        var c = "true";
+
+        var n = null; // valeur null
+        var u = undefined;
+        var nn = NaN; // Not a number
+    </script>
+    
+    <p>Tester le type d'une variable avec la fonction typeof()</p>
+    // Tester le type d'une variable
+    <script>
+    x = "quartre"
+
+    alert("Variable x : " + typeof(x) +
+          "\nVariable y : " + typeof(y) +
+          "\nVariable a : " + typeof(a) + 
+          "\nVariable n : " + typeof(n) +
+          "\nVariable u : " + typeof(u) +
+          "\nVariable nn : " + typeof(nn) 
+        );
+    </script>
+
+
+
+    <h2>5. Les Opérations sur les variables </h2>
+    <p>Manipulation de variables </p>
+    <script>
+        var x = 5, y = 10, z = -2;
+
+        // " = " est un opérateur d'affectation et non d'égalité
+
+        x = x + 1;   // x stocke maintenant la velur 6
+        x = x - 2;  // x stocke maintenant la valeur 4
+
+        y = y + 2; 
+
+    </script>
+
+    <p>Opérations mathématiques simples sur les vairables et priorités des calculs</p>
+    <script>
+        var mult = x * y;
+        var divi = y / z;
+        var mod = 13 % 3; // mod stocke le reste de la division de 13/3 dont 1
+
+        alert("Variable x : " + x +
+          "\nVariable y : " + y +
+          "\nVariable z : " + z +
+          "\nVariable mult (x * y) : " + mult + 
+          "\nVariable divi (y / z) : " + divi +
+          "\nVariable mod (13 % 3): " + mod 
+        );
+
+        // Les priorités de calculs
+        var x=5, y=10, z=-2;
+
+        var priorite = x + y / (4 + z) % 3
+        alert("Le résulat est priorité = " + priorite)
+    </script>
+
+    <p>Notations condensés pour les opérations</p>
+    <script>
+        var x=5, y=10, z=-2
+
+        x += 2; // x = x + 2
+        x -= 3; // x = x - 3
+
+        y *= x;  // y = y * x
+        y /= 2;  // y = y / 2
+
+        y %= x;  // y = y % x
+
+        alert(x);
+    </script>
+
+
+
+    <h2>6. La Concaténantion </h2>
+    <p>Définition de la concaténation</p>
+    <p>Apprendre à concatener avec l'opérateur " + " /p>
+    <script>
+        var prenom = "Thomas", espace = " ", nom = "AWOUNFOUET";
+        var moi = prenom + espace + nom;
+        var toi = "Pierre" + " " + "Giraud"
+
+        var sport = "courir";
+        var hobbie = "J'aime " + sport;
+
+        alert("Contenue de la variable moi :" + moi + 
+              "\nContenue de la variable toi :" + toi + 
+              "\nContenue de la variable hobbie :" + hobbie)
+
+    </script>
+    <p>Concatener un chiffre et une chaîne de charactère</p>
+    <script>
+        var x = 4 + 2 + "1";
+        var y = "1" + 2 + "4";
+        var z = 2 + "un" + 4
+        alert("Variable x : " + x + "type of x" + typeof(x) +
+              "\nVaraible y : " + y +
+              "\nVaraible z : " + z 
+             )
+    </script>
+
+
+
+
+    <script src="javascript.js"></script>    
 </body>
 </html>
 
