@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Conditions en JavaScript</title>
+</head>
+<body>
+ 
+    <h2>7. Les Conditions  </h2>
+    <p>Définition des Conditions</p>
+    <p>Présentation des conditions</p>
+    <p>Comprendre comment JavaScript compare les valeurs</p>
+
+    <script>
+        var x = 7, y = 14;
+
+        var vrai = x < y;
+        var faux = 14 <= 7
+
+        var egalval = 4 == "4" // vrai -> égalité en valeur
+        var egalvaltype = 4 === "4" // faux -> égalité en valeur et en type
+
+        var difval = 4 != "4" // false -> différence en valeur
+        var difvaltype = 4 !== "4" // vrai -> différence en type et en valeur
+
+        alert("vrai stocke : " + vrai + 
+              "\nfaux stocke : " + faux + 
+              "\negalval stocke : " + egalval + 
+              "\negalvaltype stocke : " + egalvaltype + 
+              "\ndifval stocke : " + difval + 
+              "\ndifvaltype stocke : " + difvaltype 
+            )
+
+    </script>
+
+
+
+    <h2>8. Les Conditions if, if...else, if...else if...else  </h2>
+    <p>Objectifs</p>
+    <p>- Découverte de la structure conditionnelle if</p>
+    <script>
+        var heure = 15;
+
+        if (heure <= 18 == true){
+            // code if true
+            alert("Bonjour");
+        }
+        
+    </script>   
+
+    <p>- Découverte de la structure conditionnelle if ... else</p>
+    <script>
+        var heure = 21;
+
+        if (heure <= 18 == true)
+        {
+            alert("Bonjour")
+        }
+        else{
+            alert("Bonsoir")
+        }
+    </script>
+
+    <p>- Découverte de la structure conditionnelle if ... else if ... else</p>
+    <script>
+        var heure = 12
+
+        if (heure < 12 == true)
+        {
+            alert("C'est le matin");
+        }
+        else if (heure == 12 == true)
+        {
+            alert("Il est midi");
+        }
+        else if (heure <= 18 == true)
+        {
+            alert("C'est l'après midi");
+        }
+        else 
+        {
+            alert("C'est le soir");
+        }
+    </script>
+
+
+    <p>- Conditions imbriquées</p>
+
+    <script>
+        var heure = "neuf"
+
+        if (typeof(heure) == "number" == true) 
+        {
+            if (heure < 12 == true)
+            {
+                alert("C'est le matin");
+            }
+            else if (heure == 12 == true)
+            {
+                alert("Il est midi");
+            }
+            else if (heure <= 18 == true)
+            {
+                alert("C'est l'après midi");
+            }
+            else 
+            {
+                alert("C'est le soir");
+            } 
+        }
+        else {
+            alert("Mauvais type de valeur")
+        }
+    </script>
+
+
+
+
+
+    <h2>9. Les Opérateurs Logiques  </h2>
+    <p>Trois opérateurs logiques à connaître : ET, OU et CONTRAIRE</p>
+    <li> ET(AND) - && </li>
+    <script>
+        var heure = 19;
+
+        if (heure >= 0 && heure < 12 == true) {
+            alert("C'est le matin");
+        }
+        else if (heure === 12 == true ){ 
+            alert("C'est midi pile -")
+
+        }
+        else if (heure > 12 && heure <= 24 == true) {
+            alert("C'est l'après midi ou le soir")
+
+        }
+        else {
+            alert("La valeur entrée ne semble pas valide");
+        }
+    </script>
+
+    <li> OU(OR) - || </li>
+    <script>
+        var heure = 26;
+
+        if (heure < 0 || heure > 24) {
+            alert("L'heure est invalide")
+        }
+        else {
+            alert("L'heure semble valide")
+        }
+    </script>
+
+    <li> L'opérateur logique CONTRAIRE(NON) - ! </li>
+    <p>C'est opérateur va nous permettre de nier le résulat d'une comparaison, ainsi les comparaison
+        évaluées de base à False vont être évaluées à true et inversement.</p>
+    <script>
+        var heure = 18;
+
+        if ( ! (heure <= 16 == true) ) {
+            alert("Il est plus de 16h");
+        }
+        else {
+            alert("Il est moins de 16h")
+        }
+    </script>
+    <p>Utilisés les opérateurs pour réaliser plusieurs comparaisons au sein d'une condition</p>
+        
+   
+
+
+    <h2>10. Evaluation / Simplification des Conditions  </h2>
+    <p>Objectif </p>
+    <script>
+        var heure = 18;
+
+        if (heure > 12 == true) {
+            alert("Il est midi passé")
+        }
+    </script>
+    <p>- Apprendre à simplifier l'écriture des conditions</p>
+    
+    Example avec l'affirmation - True
+    <script>
+        var heure = 18;
+
+        if (heure > 12 == true) {
+            alert("Il est midi passé");
+        }
+        // Forme simplifié de la condtion
+        if (heure > 12) {
+            alert("Il est midi passé");
+        }
+    </script>
+
+    // Example avec la Négation - False
+    <script>
+        var heure = 18;
+
+        if (heure < 12 == false) {
+            alert("Il est midi passé")
+        }
+        // Forme simplifié
+        if ( !(heure < 12) ) {
+            alert("Il est midi passé")
+        }
+    </script>
+
+    <p>- Comprendre comment fonctionne l'évaluation des valeurs en Javascript</p>
+    <p>Une valeur peut-être évalué à "true" ou "false" même sans opération de comparaison 
+        par le JavaScript. Ainsi toute valeur différente de null, undefined, NaN, 0 et la chaîne de charactère vide " " 
+        sera évaluer par défaut à true par le javascript</p>
+    <script>
+        var x = 6, y = "";
+
+        if (x) {
+            alert("x est évalué à ture par le JS")
+        }
+
+        if (y) {
+            alert("y est évalué à true")
+        }
+        else {
+            alert("y est évalué à false")
+        }
+
+    </script>
+
+
+
+    <h2>11. Les Condition Ternaires  </h2>
+    <p>Objectifs : </p>
+    <p>- Savoir uliier les ternaires</p>
+    <script>
+        var heure = 19, bon = ""
+
+        bon = (heure <= 18) ? "Bonjour" : "Bonsoir";
+        alert(bon)
+    </script>
+
+    <p>- Découverte de la Syntaxe d'une structure ternaire</p>
+    // Forme normal sans utulissation des ternaires
+    <script>
+        var heure = 12, bon =""
+
+        if (heure <= 18) {
+            bon = "Bonjour";
+        }
+        else {
+            bon = "Bonsoir"
+        }
+        alert(bon);
+    </script>
+
+
+    <h2>12. Les switch  </h2>
+    <script>
+        var heure = 10;
+
+        switch (heure) {
+            case 8 : 
+                alert("Il est 8h");
+                break;
+            case 9 : 
+                alert("Il est 9h");
+                break;
+            case 10 : 
+                alert("Il est 10h");
+                break;
+            case 11 :
+                alert("Il est 11h");
+                break;
+            case 12 : 
+                alert("Il est 12h");
+                break;
+            default : 
+                alert("Rien à afficher pour cette valeur")
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Objets</title>
+</head>
+<body>
+
+
+    <h2>13. Les Objets en JavaScript  </h2>
+    <p>Objectifs : </p>
+    <p>- Comprendre l'importance des objects en Javascript</p>
+    <p>- Définir un objet</p>
+    <p>- Comprendre ce sont les propriétés et les méthode d'un objet</p>
+    <script>
+        var primitive = "Je suis une valeur primitive";
+
+        var moi = {
+            // Les propriétés de l'objet moi
+            prenom : "Thomas",
+            nom : "AWOUNFOUET",
+            age : 28,
+
+            //proppriéte qui peut devenir une mméthode de l'objets moi
+            identite : function(){
+                return 'Prenom : ' + this.prenom + 
+                        '\nNom : ' + this.nom +
+                        '\nAge : ' + this.age; 
+            }
+        }
+        alert(moi.identite())
+    </script>
+    
+
+    
+
+    <h2>14.Valeurs Primitives et Objets </h2>
+    <p>Objectifs : </p>
+    <p>- Découverte des objets natifs</p>
+    <p>- Création d'objets natifs</p>
+    <p>- Explication des différences entre objets natifs et valeurs primitives</p>
+    <script>
+        var primitive = "Je suis une valeur primitive";
+        var type_prim = typeof(primitive)
+        var longueur_prim = primitive.length();
+        var paj_prim = primitive.toLocaleUpperCase();
+
+        var chaine = new String("Je suis un objet");
+        var type_chaine =typeof(chaine)
+        var maj_chaine = chaine.toLocaleUpperCase();
+
+        alert('Type de primitive : ' + type_prim + '\nType de chaine : ' + type_chaine)
+        alert('Longueur de primitive : ' + longueur_prim + 
+             '\nPrimitive en Maj : ' + paj_prim +
+            '\Chaine en Maj : ' + maj_chaine )
+    </script>
+
+
+
+    <h2>15.Créer des Objets en JavaScript</h2>
+    <p>Objectifs : </p>
+    <P>- Découverte des différentes facon de créer des objets en JavaScript</P>
+    <p>- Créer un objet avec le mot clef new</p>
+    <script>
+        var obj_string = new String("Je suis un objet")
+        var obj_cree= new Object();
+   
+        obj_cree.prenom = "Thomas";
+        obj_cree.nom = "AWOUNFOUET";
+        obj_cree.age = 28;
+
+        alert(obj.prenom)
+    </script>
+
+    <p>- Créer un objet littéral</p>
+    <script>
+        var moi = {
+            prenom: "Pierre",
+            nom : "Giraud",
+            age : 25,
+
+            id : function(){
+                return this.prenom + ' ' + this.nom;
+            }
+        };
+        alert(moi.id());
+    </script>
+
+    <p>- Créer un objet à partir d'un constructeur</p>
+    <script>
+        function Identite(p, n, a){
+            this.prenom = p;
+            this.nom = n;
+            this.age = a;
+        }
+
+        var pierre = new Identite("Pierre", "Giraud", 25)
+        var thomas = new Identite("Thomas", "AWF", 28)
+
+        alert("Age de Pierre: " + pierre.age +
+             "\nAge de Thomas: " + thomas.age)
+    </script>
+
+    
+    <p>Comparer le comportement des valeurs primitives et des objets</p>
+    <script>
+        var x = 10;
+        var y = x;
+        y += 10;
+
+        alert("Valeur de x : " + x +
+             "\nValeur de y " + y)
+
+        
+
+
+        function Identite(p, n, a){
+            this.prenom = p;
+            this.nom = n;
+            this.age = a;
+        }
+
+        var pierre = new Identite("Pierre", "Giraud", 25)
+        var victor = pierre;
+
+        victor.prenom = "dakadjkk"
+
+        alert("Age de Pierre: " + pierre.prenom +
+             "\nAge de Victor: " + victor.prenom)
+
+     
+    </script>
+
+
+</body>
+</html>

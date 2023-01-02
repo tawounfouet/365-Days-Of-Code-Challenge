@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Boucles en JavaScript</title>
+</head>
+<body>
+ 
+    <h2>13. Les Boucles en JavaScript  </h2>
+    <p>Objectifs :</p>
+    <p>- Découverte des boucles while, do...while et for </p>
+    <li>La boucle while</li>
+    <script>  
+       var x = 0;
+       
+        while (x < 10) {
+            alert("x contient la valeur : " + x);
+            x++;
+        }
+    </script>
+
+    <script>
+        var x = 0, xprime = 0, alpha = 10, aphaprime = 10
+
+        var y = x++
+        var beta = apha--
+
+        var yprime = ++xprime
+        var betaprime = --alphaprime
+
+        alert("y : " + y +
+            "\nx : " + x + 
+            "\nbeta : " + beta + 
+            "\nalpha : " + alpha + 
+            "\nyprime : " + yprime + 
+            "\nxprime : " + xprime + 
+            "\nbetaprime : " + betaprime + 
+            "\nalpaprime : " + aphaprime)
+    </script>
+
+
+    <li>Le boucle do...while</li>
+    <script>
+        var x = 0
+
+        do {
+            alert('x vaut : ' + x)
+            x--
+        }
+        while (x > 10)
+    </script>
+
+
+    <li>La boucle for </li>
+    <script>
+        var i = ""
+
+        for (i = 0; i < 10; i++) {
+            alert("i contient la valeur : " + i)
+        }
+    </script>
+
+
+
+
+    <p>- Examples d'utilisation des boucles</p>
+    <p>- Comprendre l'incrémentation et la décrémentation</p>
+
+</body>
+</html>
