@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Objets, Méthodes et Propriétés </title>
+</head>
+<body>
+    
+    <h2>16. Les Méthodes de l'Objet String  </h2>
+    <p>Objectifs : </p>
+    <p>Découverte des propriétes et méthodes les plus utiles de l'objet String</p>
+
+    <script>
+        var texte = "J'apprends le JavaScript "
+
+        var texteMin = texte.toLowerCase();
+        var textMaj = texte.toUpperCase();
+
+        var pos0 = texte.charAt(0);
+        var pos3 = texte.charAt(3);
+        var pos11 = texte.charAt(11)
+
+        // Premiere occurence d'un charactère
+        var premiere = texte.indexOf('p')
+        var derniere = texte.lastIndexOf('p')
+        var sequence = texte.indexOf("le")
+
+        /*
+        alert("Texte de base : " + texte +
+                "\nTexte en Minuscule : " + texteMin + 
+                "\nTexte en Majuscule : " + textMaj + "\n" +
+
+                "\nTexte en pos0 : " + pos0 + 
+                "\nTexte en pos3 : " + pos3 + 
+                "\nTexte en pos11 : " + pos11 + "\n" +
+
+                "\nPremiere 'p' trouvé en posistion " + premiere +
+                "\nDernier 'p' trouvé en posistion " + derniere + 
+                "\nPremier 'le' trouvé en posistion " + sequence      
+            ) 
+        */
+        // Méhode replace
+        //alert(texte.replace("JavaScript", "Python"))
+
+        /* Méthode slice : extraire une partie d'une chaine et rteourné la partie extraite 
+         comme une nouvelle chaine */
+        //alert(texte.slice(0, 10))
+
+        var texteTronque = texte.slice(-11, -1)
+        //alert(texteTronque)
+
+        // Méthode trim : elle va supprimer les espaces supperflue en debut et en fin de charactère
+        var texte = "         J'apprends le JavaScript            "
+        var texteNettoye = texte.trim()
+        //alert("texte avant netooyage" + texte + "\ntexte après trim : " + texteNettoye )
+    </script>
+
+
+    <h2>17. Les Méthodes de l'Objet Number  </h2>
+    <p>Objectifs : </p>
+    <p>Découverte des propriétes et méthodes les plus utiles de l'objet Number</p>
+    <script>
+        var min = Number.MIN_VALUE;
+        var max = Number.MAX_VALUE;
+        var infneg = Number.NEGATIVE_INFINITY;
+        var infpos = Number.POSITIVE_INFINITY;
+        var notnumber = Number.NaN;
+
+        alert("Min : " + min + 
+             "\nMax : " + max + 
+             "\nInfini Négatif : " + infneg + 
+             "\nInfini Positif : " + infpos + 
+             "\nPas un nombre : " + notnumber)
+
+        // Méthode de String
+        var x = 10;
+        var t = x.toString();
+
+        // Méthode de Fixed
+        var x = 10.4531
+        var d = x.toFixed(2) // arrondi à deux chiffre après la virgule
+
+        // Méthode toPrecision
+        var p = x.toPrecision(3) // les trois premier chiffre du nombre 
+
+        // Méthode number pour convertir les objets Js en nimbre
+        var t = true;
+        var f = false;
+        var d = new Date()
+
+        //alert("True : " + Number(t) + "\nFalse : " + Number(f) +  "\nDate " + Number(d))
+
+        // parseInt et parseFloat
+        var  x = "10.4531"
+
+        var int = parseInt(x)
+        var float = parseFloat(x)
+    </script>
+
+    <h2>18. Découverte de l'Objet Array  </h2>
+    <p>Objectifs : </p>
+    <p>- Présentation de l'objet Array et des tableaux en JS</p>  
+    <p>- Créer un tableau et afficher ses valeurs</p>
+    <p>- Calculer le nombre d'éléments d'un tableau</p>
+    <p>- Connaître la différence entre objet littéral et tableau </p>
+    <script>
+        var prenoms = ['Pierre', 'Thomas', 'Julia', 'Clair']
+
+        // modifier une valeur dans notre array
+        prenoms[0] = 'Paul';
+        //alert(prenoms[0])
+
+        // Taille 
+        //alert(prenoms.length)
+
+        // Ajouter des éléments à la fin du tableau
+        prenoms[prenoms.length] = 'Florian'
+        prenoms[prenoms.length] = 'Chloé'
+
+        // Pacourir les valeurs d'un tableau avec la boucle for
+        p = ''
+
+        for (i=0; i < prenoms.length; i++) {
+            p+= 'Prénom num. ' + (i+1) + ' : ' + prenoms[i] + '\n';
+        }
+        //alert(p)
+
+
+        // Les Objets littéraux
+        var prenoms = {
+            prenom1 : 'Pierre',
+            prenom2 : 'Victor',
+            prenom3 : 'Julia',
+            prenom4 : 'Clair'
+        }; 
+
+        var p = '';
+        
+        // alert(prenoms.prenom1);
+
+        for (var clefs in prenoms) {
+            p+= clefs + ' : ' + prenoms[clefs] + '\n';
+        }
+        alert(p)
+    </script>
+
+
+    <h2>19. Les Méthodes l'Objet Array  </h2>
+    <p>Objectifs : </p>
+    <p>- Découverte des méthodes les plus utiles de l'objet Array.</p> 
+    <script>
+        var prenoms = ['Pierre', 'Thomas', 'Julia', 'Clair']
+        var p = ''
+
+        // Ajouter des éléments en fin de tableau - push
+        var taille = prenoms.push("Florian", "Chloé");
+
+        for (var i=0; i < prenoms.length; i++) {
+            p+= 'Prenoms num.' + (i+1) + ' : ' + prenoms[i] + '\n';
+        }
+
+        alert('Le tableau contiens ' + taille + 'éléments : \n\n' + p);
+
+
+        // Supprimer le dernier élément du tableau
+        var suppr = prenoms.pop();
+
+        // Ajouter plusieurs éléments en debut de tableau
+        var prenomsAdded = prenoms.unshift('Nil', 'Joe')
+
+        // Supprimer le premier élément du tableau
+        var prenomSuppr = prenoms.shift()
+
+
+        prenoms.sort()
+        prenoms.reverse()
+
+        var chaine = prenoms.join('/')
+        //alert(prenoms+ '\n\n' + prenoms.sort() + '\n\n' + prenoms.reverse() + "\n\n" + chaine)
+
+
+        // Slice - extraction d'un tableau à partir d'un tableau de base
+        var garcons = prenoms.slice(0, 2)
+
+
+        // Concats
+        var garcons = ["Thomas", "Pierre", "Joe"]
+        var filles = ["Julia", "Claire"]
+
+        var gf = garcons.concat(filles);
+        //alert(gf)
+
+    </script> 
+
+
+    <h2>20. L'Objet Date  </h2>
+    <p>Objectifs : </p>
+    <p>- Présentation de l'objet Date</p>
+    <p>- Créer un objet de type date</p> 
+    <p>- Récupérer la date actuelle en JavaScript</p>
+    <p>- Connaître les formats de date valides en JavaScript </p>
+    <script>
+        var datelit = Date()
+        var datems = Date.now()
+        
+        alert('Date littérale : ' + datelit + 
+            "\nDate sous forme de ms : " + datems )
+
+        // Création d'un nouvelle objet de type date
+        var d = new Date();
+
+        // Attribuer une date a 
+        var d = new Date("January 25, 2015 09:00:00")
+
+        // Format ISO
+        var diso1 = new Date("2015-06-15")
+        var diso2 = new Date("2015-06-15T12:00:0")
+
+        var dcourte = new Date("06/15/2015");
+        var dlonguer = new Date("January 25 2015 09:00:00")
+
+        var dcomp = new Date("Sun Jan 2015 09:00:00 GMT+0100")
+    </script>
+
+
+    <h2>21. Les Méthodes l'Objet Date  </h2>
+    <p>Objectifs : </p>
+    <p>- Découverte des méthodes les plus utiles de l'objet Date.</p> 
+    <script>
+        var d = new Date();
+
+        var dms = d.getTime()
+        var dy = d.getFullYear()
+        var dmo = d.getMonth()
+        var ddate = d.getDate()
+        var dday = d.getDay()
+
+        var dh = d.getHours()
+        var dmi = d.getMinutes()
+        var ds = d.getSeconds()
+        var dMs = d.getMilliseconds()
+
+        var mois = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", 
+                    "septembre", "cotobre", "novembre", "decembre"]
+
+        var jour = ["dimanch", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"]
+
+
+        alert("Le " + jour[dday] + " " + ddate + " " + mois[dmo] + " " + dy + 
+                "\nIl est : " + dh + "h" + dmi + "mn et " + ds +"s.")
+
+
+        // Les méthode de type setter de l'objet date
+         var d = new Date()
+
+         d.setFullYear(2015,5,15)
+         d.setHours(12)
+         d.setMinutes(30)
+         d.setSeconds(15)
+    </script>
+
+
+
+
+    <h2>21. Les Méthodes l'Objet Math  </h2>
+    <p>Objectifs : </p>
+    <p>- Découverte des méthodes les plus utiles de l'objet Math </p> 
+    <script>
+        var x = Math.random()
+        var y = Math.random()
+
+        var xfois1000 = Math.random()*1000
+        var roundX = Math.round(x)
+
+        var inf = Math.floor(x)
+        var sup = Math.ceil(x)
+
+        var min = Math.min(0, -10, 200, 75, 25)
+        var max = Math.max(0, -10, 200, 75, 25);
+
+        var absx = Math.abs(x)
+        var absy = Math.abs(y)
+
+
+        alert("Contenu de x : " + x  +
+            "\nContenu de y : " + y)
+
+        
+
+</script>
+
+
+    
+</body>
+</html>
