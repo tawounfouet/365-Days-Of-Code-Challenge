@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le DOM</title>
+</head>
+<body>
+    <h1 id="gros_titre">LE DOM ET JAVASCRIPT</h1>
+    
+    <h2>32. Decouverte du DOM HTML </h2>
+    <p>Objectifs :</p>
+    <p>- Définir ce qu'est le Documeny Objet Model </p>
+    <p>- Présenter la structure du DOM HTML</p>
+    <p>- Faire le rapport entre le DOM et le JavaScript</p>
+    Tout objet contenu dans le DOM est un noeud 
+
+
+    <h2>33. Acceder a un élémenty HTML </h2>
+    <p>Objectifs :</p>
+    <p class="para">- Découverte des différentes méthodes permettant d'accéder à un évènement en HTML </p>
+    <p class="para">- Accéder au contenu d'un élément en HTML</p>
+    <p class="para">- Accéder directement à un élément grâce aux propriétés body, links et title </p>
+    <p class="paralien"> Du texte et <a href="https://awf-fitness.com">un lien</a></p>
+    <script>
+        var titre = document.getElementById("gros_titre")
+        //alert(titre)
+        //alert(titre.innerHTML)
+
+
+        var tableau = document.getElementsByTagName('p')
+        //alert("Notre page contient : " + tableau.length + " paragraphes")
+
+        var tableauClass = document.getElementsByClassName("para")
+        //alert("Notre page contient : " + tableauClass.length + " paragraphe portant la class para")
+
+
+        var lien = document.querySelector("p a");
+        var p = document.querySelectorAll(".para")
+        //alert("Informations dans lien : " + lien +  "\nDans p[0] : " + p[0] )
+
+        var pContent = document.querySelector(".para").innerHTML;
+        //alert(pContent)
+
+        var pt = document.querySelector(".paralien").innerHTML;
+        var t = document.querySelector(".paralien").textContent;
+        //alert(pt + "\n" + t)
+
+        var titre_page = document.title;
+        var page = document.body;
+        var lien = document.links;
+
+        //alert('Contenu de Titre de page : ' +  titre_page + "\nContenu de page : " +  page +  "\nContenu de lien : " + lien[0])
+    </script>
+
+
+
+    <h2>33. Modifier du Contenu HTML </h2>
+    <p class="par">Objectifs :</p>
+    <p>- Apprendre à modifier du contenu d'un élément HTML </p>
+    <p>- Apprendre à modifier la valeur d'un attribut HTML </p>
+    <p>- Apprendre à modifier du code CSS relatif à un élément HTML</p>
+    <script>
+        var titre = document.getElementById('gros_titre');
+        var texteTitre = titre.innerHTML;
+
+        var textePara = document.querySelector(".par").textContent
+        //alert(texteTitre + "\n" + textePara)
+
+        // Modification du contenu du titre 
+        //document.getElementById('gros_titre').textContent = "Titre Modifié"
+        //document.getElementById('gros_titre').textContent += " et de la modification en JS"
+
+        //document.getElementById('gros_titre').innerHTML += " <mark>et de la modification en JS</mark>"
+
+        //document.querySelector('a').href = "https://wikipedia.org"
+
+        // Modiifier le CSS/style d'un élément HTML
+        document.getElementById("gros_titre").style.color = 'red'
+        document.getElementById("gros_titre").style.fontSize = '30px'
+    </script>
+
+
+    <h2>34. Ajouter et Insérer des éléments HTML </h2>
+    <p>Objectifs :</p>
+    <p>- Créer élément HTML en JavaScript</p>
+    <p>- Ajouter un attribut et du texte à un élément HTML</p>
+    <p>- Insérer du texte et un élement dans une page HTML</p>
+    <p>- Insérer un élément à un endroit précis</p>
+    <script>
+        var newPara = document.createElement('p');
+        newPara.id = 'nouveau';
+
+        var texte = document.createTextNode('Voici le texte à insérer');
+
+        newPara.appendChild(texte);
+        document.body.appendChild(newPara)
+
+        var para1 = document.querySelector('.para');
+        document.body.insertBefore(newPara, para1).style.color = 'red'
+    </script>
+
+
+
+    <h2>35. Modifier et Supprimer des Elément HTML </h2>
+    <p>Objectifs :</p>
+    <p>- Apprendre à supprimer élément HTML en JavaScript</p>
+    <p>- Apprendre à modifier élément HTML en JavaScript</p>
+    <script>
+        //Supprimé titre
+        var titre = document.getElementById('gros_titre')
+        var parent = document.body;
+        //parent.removeChild(titre);
+
+        //Modifié titre 
+        var nouveauTitre = document.createElement('h2');
+        nouveauTitre.id = 'titre_moyen';
+        nouveauTitre.innerHTML = "Titre Moyen Modifié en JS"
+        //parent.replaceChild(nouveauTitre, titre)
+    </script>
+
+
+    <h2>36. Naviguer dans le DOM en JavaScript </h2>
+    <p>Objectifs :</p>
+    <p>- Apprendre à Naviguer entre les différents noeuds du DOM</p>
+    <p>- Comprendre l'intérêt de naviguer dans le DOM</p>
+
+    <h1 id="mon_titre"> Navigation dans le DOM</h1>
+    <div>
+        <p class="pa">Du texte</p>
+        <p class="pa">Un deuxième <strong>paragraphe</strong></p>
+    </div>
+
+    <script>
+        var p = document.querySelector('.pa')
+        var div = p.parentNode;
+        
+        div.style.color = "red"
+
+
+        var b = document.body;
+        var div = b.childNodes;
+        var p1 = div.childNodes[1];
+        var texte = p1.childNodes[0].nodeValue;
+        alert(texte)
+
+        var p2 = document.querySelectorAll('.pa')[1];
+
+        var premier = p2.firstChild;
+        var dernier = p2.lastChild;
+
+        var inner1 = premier.nodeValue;
+        var inner2 = dernier.innerHTML;
+
+        alert(inner1 + "\n" + inner2)
+
+
+        var titre = document.getElementById("mon_titre")
+        
+        var div = titre.nextSibling.nextSibling
+        div.innerHTML = '<p>div totalement modifié</p>'
+
+
+    </script>
+
+</body>
+</html>

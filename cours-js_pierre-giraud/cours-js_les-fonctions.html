@@ -34,6 +34,79 @@
         alert(resulat1)
     </script>
 
+    <h2>14. Notions avancé sur les fonctions - La Portée en JavaScript  </h2>
+    <p>Objectifs :</p>
+    <p>- Définir la portée en JavaScript </p>
+    <p>- Comprendre les différences entre variables locales et globales</p>
+    <p>- Choix de la portée</p>
+    <script>
+        // Variable locale
+        function locale(){
+            var x = 5;   // ici la variable x est défini localement par rapport à notre fonction
+            alert(x)
+        }
+        locale(x)
+
+
+        // variable globale
+        var z = 4;  // ici la variable x est défini globalement
+        function gloabe(){
+            alert(z)
+        }
+    </script>
+
+
+    <h2>15. Les fonctions anonyme  </h2>
+    <p>Objectifs :</p>
+    <p>- Définir des fonctions anonymes </p>
+    <p>- Création d'un fonction anonyme</p>
+    <p>- Exécuter une fonction anonyme</p>
+    <script>
+    var carre = function(x){
+        alert("Le carré de " + x + " = " + x*x)
+    };
+
+    var y = prompt('Entrez un nombre ...')
+
+    carre(y);
+    </script>
+
+
+
+    <h2>16. Les fonctions Auto-Invoquées  </h2>
+    <p>Objectifs :</p>
+    <p>- Présentation des fonctions auto-invoquées </p>
+    <p>- Création d'un fonction auto-invoquéd</p>
+    <script>
+        (function(x){
+            x = prompt("Enctrez un nombre")
+            alert(x*x)
+        })();
+
+    </script>
+
+
+
+
+    <h2>17. Les closures en JavaScript  </h2>
+    <p>Objectifs :</p>
+    <p>- Rappels sur la portée et la durée de vie des variables </p>
+    <p>- Découverte et explication des closures</p>
+    <p>- Création d'une closure</p>
+    <p>- Comprendre l'intérêt des closures</p>
+    Une closure (ou une fermeture) est une fonction qui va récupérer et pourvoir utiliser des variables d'environnement
+    dans laquelle elle a été crée. Autrement dit une closure va nous permettre d'enfermer ou d'isoler une partie de 
+    pouvoir utiliser et récupérer des variables qui ne sont accessible normalement que depuis l'intérieur de ce code.
+    <script>
+        function compteur(){
+            var i = 0;
+
+            return function(){
+                return i++
+            }
+        }
+        alert(compteur)
+    </script>
 
 </body>
 </html>
