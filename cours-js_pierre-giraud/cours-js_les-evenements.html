@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Evènement en JS </title>
+</head>
+<body>
+<h1 id="gros_titre">Les évènement</h1>
+<h2>1. Introduction au Evèmenements en JavaScript  </h2>
+<p>Cliquez-moi, Cliquez-moi</p>
+<p onclick="this.textContent='Merci !'">Cliquez-moi</p>
+<p>Un deuxième paragraphe</p>
+
+<script>
+    var p1 = document.querySelector('p')
+
+    p1.onclick = function(){
+        this.innerHTML = '<strong> Bravo ! </strong>'
+        this.style.color = 'red'
+    }
+</script>
+
+
+<h2>2. La méthode AddEventListener  </h2>
+<p>Présenter la méthode addEventListener()</p>
+<p>Exmple d'utilisation</p>
+<p>Comprendre l'intérêt d'utiliser cette méthode</p>
+<div>
+    <p id="para1"> Cliquez-moi encore</p>
+    <p id="para2">Un deuxième <strong>paragraphe</strong></p>
+    <p id="para3">Clickez! Pour Afficher les messages</p>
+</div>
+
+<script>
+
+    var titre = document.getElementById('gros_titre');
+    var p1 = document.getElementById('para1');
+    var p2 = document.getElementById('para2');
+    var p3 = document.getElementById('para3');
+
+    p1.addEventListener('click', changeTexte);
+
+    function changeTexte(){
+        this.innerHTML = "<strong> Bravo ! </strong>"
+        this.style.color = 'green'
+    }
+
+    // 2eme méthide en utilisant une fonction anonylme 
+
+    p2.addEventListener('click', function(){
+        this.innerHTML = "<strong> Bravo tu maitrise les évènements! </strong>"
+        this.style.color = 'green'
+    });
+
+    // Accrocher deux gestionnaire d'évènement au meme objet
+    p3.addEventListener('mouseover', Fonction1);
+    p3.addEventListener('mouseout', Reset1);
+    p3.addEventListener('mousedown', Fonction2);
+    p3.addEventListener('mouseup', Reset2);
+
+    function Fonction1(){
+        this.innerHTML = 'Cliquez moi maintenant'
+        this.style.backgroundColor = "orange"
+    }
+
+    function Reset1(){
+        this.innerHTML = 'Bravo';
+        this.style.backgroundColor ='';
+    }
+
+    function Fonction2(){
+        this.innerHTML = "Clickez! Pour Afficher les messages"
+        this.style.color = '#26C'
+        this.style.fontWeight = 'bold'
+        this.style.fontSize = '24px'
+    }
+   
+    function Reset2(){
+        this.innerHTML = "Clickez! Pour Afficher les messages"
+        this.style.color = ''
+        this.style.fontWeight = ''
+        this.style.fontSize = ''
+    }
+</script>
+
+
+<h2>3. La propagation des évènements  </h2>
+<p>Présentation et explication du phénomène de propagation des évènements</p>
+<p>Comprendre les deux phases de propagation</p>
+<p>Gérer l'ordre de déclenchement des évènements</p>
+<div id="div">
+    <p id='p4''>Un premier paragraphe</p>
+    <p>Un deuxième paragraphe</p>
+</div>
+<script>
+    var div = document.getElementById('div')
+    var p4 = document.getElementById('p4')
+/*
+    div.addEventListener('click', MessageDiv)
+    p4.addEventListener('click', MessageP)
+
+    function MessageDiv(){
+        alert('Evènement du div')
+    }
+
+    function MessageP(){
+        alert('Evènement du Paragraphe')
+    }
+*/
+</script>
+
+
+
+<h3>3.1 Les phases de propaagtions</h3>
+<div id="div1">
+    <p id='p1'> Phase de bouillonement utilisée</p>
+</div>
+<div id="div2">
+    <p id='p2'> Phase de capture utilisée</p>
+</div>
+    
+<script>
+    var div1 = document.getElementById('div1')
+    var p1 = document.getElementById('p1')
+    var div2 = document.getElementById('div2')
+    var p2 = document.getElementById('p2')
+
+    // Phase de bouillonement utilisé pour la div1 et p1
+    div1.addEventListener('click', MessageDiv1)
+    p1.addEventListener('click', MessageP1)
+    function MessageDiv1(){alert("Evènement du div1")}
+    function MessageP1(){alert("Evènement du paragraphe p1")}
+
+    // Phase de capture utilisé pour la div2 et p2
+    div1.addEventListener('click', MessageDiv2, true)
+    p1.addEventListener('click', MessageP2, true)
+    function MessageDiv2(){alert("Evènement du div2")}
+    function MessageP2(){alert("Evènement du paragraphe p2")}
+    
+</script>
+
+</body>
+</html>
