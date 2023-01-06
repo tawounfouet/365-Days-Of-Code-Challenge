@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            border: 1px solid orange;
+            padding: 20px;
+            margin: 10px;
+
+        }
+    </style>
     <title>Les Evènement en JS </title>
 </head>
 <body>
@@ -134,8 +142,8 @@
     function MessageP1(){alert("Evènement du paragraphe p1")}
 
     // Phase de capture utilisé pour la div2 et p2
-    div1.addEventListener('click', MessageDiv2, true)
-    p1.addEventListener('click', MessageP2, true)
+    div2.addEventListener('click', MessageDiv2, true)
+    p2.addEventListener('click', MessageP2, true)
     function MessageDiv2(){alert("Evènement du div2")}
     function MessageP2(){alert("Evènement du paragraphe p2")}
     
