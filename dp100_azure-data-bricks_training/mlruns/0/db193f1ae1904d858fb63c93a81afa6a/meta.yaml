@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/awf/Projects/365-Days-Of-Code-Challenge/dp100_azure-data-bricks_training/mlruns/0/db193f1ae1904d858fb63c93a81afa6a/artifacts
+end_time: 1673218462370
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: db193f1ae1904d858fb63c93a81afa6a
+run_name: bedecked-foal-900
+run_uuid: db193f1ae1904d858fb63c93a81afa6a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1673218442293
+status: 4
+tags: []
+user_id: awf

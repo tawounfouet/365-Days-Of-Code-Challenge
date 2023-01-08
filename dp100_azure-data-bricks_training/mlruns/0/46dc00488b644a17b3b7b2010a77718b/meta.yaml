@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/awf/Projects/365-Days-Of-Code-Challenge/dp100_azure-data-bricks_training/mlruns/0/46dc00488b644a17b3b7b2010a77718b/artifacts
+end_time: 1673218259751
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 46dc00488b644a17b3b7b2010a77718b
+run_name: omniscient-rat-494
+run_uuid: 46dc00488b644a17b3b7b2010a77718b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1673218226811
+status: 4
+tags: []
+user_id: awf
