@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le titre de la page -->
+    <title>Cours HTML</title>
+    <!-- Icone de l'onglet -->
+    <link rel="shortcut icon" href="logo-html.png">
+</head>
+<body>
+    <Header>
+        <h1><span>&#x21d2;</span> Texte - Titre  H1</h1>
+        <p> Texte basique. <em>Voici un texte en italique </em>. <strong>Et un 
+        texte en gras</strong>.  <span>L'élément en span ne revient pas à la
+        ligne</span>.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Minus aspernatur sunt saepe, expedita dolores magnam ducimus 
+        excepturi deserunt temporibus at? Exercitationem facere alias
+        illo aliquid assumenda, ut numquam vero unde!</p>
+    </Header>
+    <section>
+        <div>
+            <h2>Photos - H2</h2>
+            <img src="photo-paysage-2.jpg" height="350 alt="image-paysage">
+        </div>
+        <div>
+            <h3>Listes - H3</h3>
+            <ul>
+                <li>Ul -> unordered list</li>
+                <li>Ul -> unordered list</li>
+                <li>Ul -> unordered list</li>
+                <li>Ul -> unordered list</li>
+            </ul>
+            <ol>
+                <li>OL -> Ordered List</li>
+                <li>OL -> Ordered List</li>
+                <li>OL -> Ordered List</li>
+                <li>OL -> Ordered List</li>
+            </ol>
+        </div>
+        <div>
+            <h4>Tableaux - H4</h4>
+            <table border="1" width="50%">
+                <!-- Légende -->
+                <caption>Populations d'europe</caption>
+                <!-- En-tete -->
+                <thead>
+                    <tr>
+                        <th>Pays</th>
+                        <th>Population</th>
+                    </tr>
+                </thead>
+                <!-- Corps du tableau -->
+                <tbody>
+                    <tr>
+                        <td>France</td>
+                        <td>66M</td>
+                    </tr>
+                    <tr>
+                        <td>Allemagne</td>
+                        <td>82M</td>
+                    </tr>
+                    <tr>
+                        <td>Espagne</td>
+                        <td>45M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h5>Liens - H5</h5>
+            <!-- Anchor -->
+            <a href="https://htmlcheatsheet.com" target="_blank"> HTML Cheat Sheet</a><br>
+            <a href="https:/www.toptal.com/designers/htmlarrows/symbols/" target="_blank"> Icones en HTML</a>
+        </div>
+        <div>
+            <h6>Vidéo - H6</h6>
+            <video src="video.mp4" height="200" autoplay loop muted></video>
+
+        </div>
+    </section>
+    <br>
+    <!-- Formulaire -->
+    <section>
+        <h2>Formulaire</h2>
+        <form action="/action.php" method="post">
+            <label for="name">Nom </label>
+            <input id="name" type="text" placeholder="Entrez votre nom"><br>
+            
+            <label for="age">Age </label>
+            <input id="age" type="number" min="0" max="99" step="1" value="18"><br>
+
+            <!-- Input select -->
+            <label for="gender">Genre </label>
+            <select name="" id="gender">
+                <option selected value="homme">Homme</option>
+                <option value="femme">Femme</option>
+            </select><br>
+
+            <!-- Input de type radio -->
+            
+            <div>
+                <input type="radio" name="type" id="human" checked>
+                <label for="human">Humain</label>
+
+                <input type="radio" name="type" id="dog">
+                <label for="dog">Chien</label>
+
+                <input type="radio" name="type"id="chat">
+                <label for="chat">Chat</label>
+            </div>
+
+           <!-- Zone de texte  -->
+           <textarea name="" id="" cols="30" rows="10" 
+           placeholder="Entrez votre demande ici"></textarea><br>
+
+           <!-- Input Checbox -->
+          <label for=""><input type="checkbox" />Accepter les CGV</label><br>
+          <input type="submit" value="Valider"> 
+        </form>
+    </section>
+    <br>
+    <!-- Mail & Envoie de fichier  -->
+
+    <footer>
+        <a href="mailto:thomas.awounfouet@gmail.com">Ecrivez-moi !</a>
+        <br>
+        <a href="notice.txt" 
+        download="nom-du-fichier">Télécharger la notice</a>
+
+    </footer>
+    
+</body>
+
+</html>

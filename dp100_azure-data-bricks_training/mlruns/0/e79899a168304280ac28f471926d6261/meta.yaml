@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/awf/Projects/365-Days-Of-Code-Challenge/dp100_azure-data-bricks_training/mlruns/0/e79899a168304280ac28f471926d6261/artifacts
+end_time: 1673221136371
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e79899a168304280ac28f471926d6261
+run_name: kindly-shrew-236
+run_uuid: e79899a168304280ac28f471926d6261
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1673221093995
+status: 3
+tags: []
+user_id: awf
