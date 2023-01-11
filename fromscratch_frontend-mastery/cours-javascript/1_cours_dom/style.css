@@ -1,5 +1,71 @@
 
 
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+}
+
+
 body {
-    background-color: red;
+    margin: 0;
+    text-align: center;
+    color: white;
+    min-height: 200vh;
+    overflow-x: hidden;
+}
+
+.box {
+    border: 6px solid white;
+    transition:0.25s ease;
+    background: black;
+    padding: 10px;
+}
+
+p {
+    visibility: hidden;
+    width: 240px;
+    margin: 10px auto 0;
+    opacity: 0;
+    transition: 0.9s;
+    transform: translate(-200px);
+}
+
+.question-clicked {
+    background: rgb(47, 47, 47);
+    border-radius: 30px;
+    border: 6px dashed pink;
+}
+
+.show-response {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mousemove {
+    height: 50px;
+    width: 50px;
+    border: 2px solid pink;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    /* transition: 0.2s ease; */
+    z-index: -1;
+}
+
+nav {
+    background: green;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: -50px;
+    transition: 0.5s;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
 }
