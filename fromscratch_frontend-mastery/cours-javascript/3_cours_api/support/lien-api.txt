@@ -1,0 +1,8 @@
+
+
+"https://api.blablagues.net/?rub=blagues"
+
+https://randomuser.me/api
+https://randomuser.me/api/?results=24
+
+https://themealdb.com/api/json/v1/1/search.php?s=tomato

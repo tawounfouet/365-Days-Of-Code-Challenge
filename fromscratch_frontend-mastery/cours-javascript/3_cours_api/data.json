@@ -1,0 +1,30 @@
+{
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "notebook.output.textLineLimit": 20,
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "material-icon-theme",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+    },
+    "prettier.requireConfig": true,
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+  
+    "emmet.includeLanguages": { "javascript": "javascriptreact" },
+    "emmet.triggerExpansionOnTab": true,
+    "editor.formatOnSave": true,
+    "workbench.editorAssociations": {
+      "*.pickle": "default"
+    }
+  }

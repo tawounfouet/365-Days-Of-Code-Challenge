@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "pseudo": "",
+      "message": "",
+      "id": 1
+    },
+    {
+      "pseudo": "thomson",
+      "message": "Yo le 2.0",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "pseudo": "thomson",
+      "age": 28,
+      "id": 1
+    },
+    {
+      "pseudo": "thomson",
+      "age": 28,
+      "id": 2
+    }
+  ]
+}
