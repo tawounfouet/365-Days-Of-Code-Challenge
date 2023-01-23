@@ -33,8 +33,8 @@ input[type="range"] {
 }
 .card {
   flex: 1 0 20%;
-  min-width: 260px;
-  background: rgb(17, 17, 17);
+  min-width: 240px;
+  background: rgb(14, 13, 13);
   margin: 5px;
   color: rgb(245, 245, 245);
   border-radius: 20px;
